@@ -2,6 +2,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[russian]{babel}
 \usepackage{enumitem}
+\usepackage{wrapfig}
+\usepackage{graphicx}
 
 \title{Design document}
 \date{November 2024}
@@ -119,7 +121,7 @@
 
 \begin{wrapfigure}{r}{0.4\textwidth}
     \centering
-    \includegraphics[width=0.4\textwidth]{https://raw.githubusercontent.com/vadyukkha/design_document_unity_game/refs/heads/main/pictures/photo_2024-12-01_22-21-33.jpg} 
+    \includegraphics[width=0.4\textwidth]{pictures/photo_2024-12-01_22-21-33.jpg}
     \caption{\textit {Референс главного персонажа}}
     \label{fig:example}
 \end{wrapfigure} 
@@ -312,5 +314,102 @@
 \end{enumerate}
 
 \subsubsection{Объекты интерфейса пользователя}
+
+Интерфейс пользователя игры строится из следующих компонентов:
+
+\paragraph{Стандартные элементы:}
+\begin{enumerate}
+    \item \textbf{Кнопка (Button)}
+    \begin{itemize}
+        \item \textbf{Описание:} Активный элемент, который выполняет действие при нажатии.
+        \item \textbf{Примеры использования:}
+        \begin{itemize}
+            \item ``Выход'' (на экране карты уровней).
+            \item ``Назад'' (на экранах заметок и магазина).
+            \item ``Бой с боссом'' (в магазине).
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{Ползунок (Slider)}
+    \begin{itemize}
+        \item \textbf{Описание:} Элемент для изменения значения параметра путем перемещения указателя.
+        \item \textbf{Примеры использования:} Настройка громкости в меню настроек.
+    \end{itemize}
+
+    \item \textbf{Выпадающий список (Dropdown)}
+    \begin{itemize}
+        \item \textbf{Описание:} Элемент, который раскрывается для выбора одного из нескольких вариантов.
+        \item \textbf{Примеры использования:} Выбор разрешения экрана в меню настроек.
+    \end{itemize}
+
+    \item \textbf{Таблица (Table)}
+    \begin{itemize}
+        \item \textbf{Описание:} Сетка с ячейками, каждая из которых может быть интерактивной.
+        \item \textbf{Примеры использования:} Экран ``Путевые заметки'' для выбора животного.
+    \end{itemize}
+\end{enumerate}
+
+\paragraph{Нестандартные элементы:}
+\begin{enumerate}
+    \item \textbf{Карта уровней}
+    \begin{itemize}
+        \item \textbf{Описание:} Стилизованный графический элемент, представляющий собой путь с отметками-уровнями.
+        \item \textbf{Поведение:}
+        \begin{itemize}
+            \item Каждая отметка уровня – это интерактивная кнопка, которая перемещает игрока на соответствующий уровень.
+            \item Локации могут быть заблокированы, и такие кнопки становятся неактивными, пока игрок не выполнит условия разблокировки.
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{Стрелки смены локации}
+    \begin{itemize}
+        \item \textbf{Описание:} Графические элементы, представляющие кнопки для переключения между локациями.
+        \item \textbf{Поведение:}
+        \begin{itemize}
+            \item Активны только если соответствующая локация разблокирована.
+            \item Перемещают карту уровней влево или вправо.
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{Карточка товара}
+    \begin{itemize}
+        \item \textbf{Описание:} Графический элемент, содержащий изображение товара, его название и цену.
+        \item \textbf{Поведение:}
+        \begin{itemize}
+            \item При нажатии изображение товара становится тусклым, звезды списываются, а усиление активируется.
+            \item Повторное нажатие отменяет действие (восстанавливает яркость изображения и возвращает звезды).
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{Таймер уровня}
+    \begin{itemize}
+        \item \textbf{Описание:} Информационный элемент, отображающий оставшееся время прохождения уровня.
+        \item \textbf{Поведение:}
+        \begin{itemize}
+            \item Счетчик времени обновляется в режиме реального времени.
+            \item Останавливается при активации паузы или завершении уровня.
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{Индикатор звезд}
+    \begin{itemize}
+        \item \textbf{Описание:} Отображает текущее количество звезд, доступных игроку.
+        \item \textbf{Поведение:}
+        \begin{itemize}
+            \item Обновляется при покупке или возврате усилений в магазине.
+            \item Всегда отображается в правом верхнем углу экрана магазина.
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{Экран информации (Overlay)}
+    \begin{itemize}
+        \item \textbf{Описание:} Полупрозрачный слой, накладывающийся поверх текущего экрана, блокирующий его взаимодействие.
+        \item \textbf{Примеры использования:} Экран паузы.
+        \item \textbf{Поведение:}
+        \begin{itemize}
+            \item Позволяет вернуться к выбору уровня или перейти к настройкам.
+        \end{itemize}
+    \end{itemize}
+\end{enumerate}
 
 \end{document}
