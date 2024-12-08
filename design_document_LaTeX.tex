@@ -4,6 +4,7 @@
 \usepackage{enumitem}
 \usepackage{wrapfig}
 \usepackage{graphicx}
+\usepackage{subcaption}
 \usepackage{float}
 
 \title{Design document}
@@ -424,12 +425,15 @@
         \end{itemize}
     \end{itemize}
 \end{enumerate}
-\begin{wrapfigure}{r}{0.4\textwidth}
-    \centering
-    \includegraphics[width=0.4\textwidth]{pictures/UI_elements.png}
-    \caption{\textit {Примеры элементов UI}}
-    \label{fig:example}
-\end{wrapfigure}
+
+\begin{document}
+
+   \begin{figure}[h] 
+       \centering 
+       \includegraphics[width=0.5\textwidth]{pictures/UI_elements.png}
+       \caption{\textit {Примеры элементов UI}}
+       \label{fig:example}
+   \end{figure}
 
 \subsection{Графика и видео}
 
@@ -453,7 +457,7 @@
 
 \begin{enumerate}
     \item \textbf{Интерфейс} 
-    \\В связи с тем, что игра имеет пиксельную графику, все элементы интерфейса представляют собой предметы с ярко выраженными пикселями. Интерфейс включает в себя различные кнопки (например, перехода на другие экраны), стрелки (например, для смены уже разблокированных локаций), ползунки. Все экраны имеют простую и интуитивно понятную навигацию с яркими кнопками и четкими шрифтами. Используются узнаваемые иконки для представления различных предметов, таких как звезды, заработанные за уровни. Они стилизованы под общую графику игры
+    \\В связи с тем, что игра имеет пиксельную графику, все элементы интерфейса представляют собой предметы с ярко выраженными пикселями. Интерфейс включает в себя различные кнопки (например, перехода на другие экраны), стрелки (например, для смены уже разблокированных локаций), ползунки. Все экраны имеют простую и интуитивно понятную навигацию с яркими кнопками и четкими шрифтами. Используются узнаваемые иконки для представления различных предметов, таких как звезды, заработанные за уровни. Они стилизованы под общую графику игры.
 Эффекты анимации включают в себя движение персонажей, взаимодействие с объектами (например, поедание насекомых), а также эффекты прыжков и падений.
 
     \item \textbf{Персонажи}
@@ -461,6 +465,31 @@
         \item Лягушка Лили - главный герой, её окрас соответствует виду коралловопалая литори.
         \item Разнообразные враги, такие как оса, комар, скорпион, зеленая жаба, шмель, крупный муровей, имеют свои уникальные дизайны и анимации.
     \end{itemize}
+    
+   \begin{figure}[h]
+       \centering
+       \begin{subfigure}{0.32\textwidth} 
+           \includegraphics[width=1\textwidth]{pictures/bugs.jpg} 
+           \caption{\textit {Жуки-враги}}
+           \label{fig:sub1}
+       \end{subfigure}
+       \hfill 
+       \begin{subfigure}{0.32\textwidth}
+           \includegraphics[width=1\textwidth]{pictures/snake_sprite.jpg} 
+           \caption{\textit {Враг-змея}}
+           \label{fig:sub2}
+       \end{subfigure}
+       \hfill
+       \begin{subfigure}{0.32\textwidth}
+           \includegraphics[width=1\textwidth]{pictures/jungle_bird.jpg} 
+           \caption{\textit {Враг-птица}}
+           \label{fig:sub3}
+       \end{subfigure}
+       \caption{\textit {Примеры врагов}}
+       \label{fig:main}
+   \end{figure}
+        
+    
 
     \item \textbf{Игровой мир}
     \\Уровни состоят из платформ различной высоты и ширины, что создает возможность для прыжков и маневров. В каждой из локации они имеют свои стилистические особенности и цветовые решения, характерные для представленного биома.
@@ -468,12 +497,44 @@
         \item Горный пейзаж: спокойные серые и голубоватые оттенки для гор и неба. Бежевые и коричневые для скал, которые ближе к зрителю. Небольшое количество салатного и травяного зелёного для крон деревьев.
         \item Джунгли: обилие оттенков насыщенного зелёного, акцентные цвета для цветков (оранжевые, красный, желтый)
         \item Пустынный мир: жёлтые цвета для песка, от светло-бежевого до охры, мутные, блеклые, зеленоватые цвета для неба, тёмно-зелёные оттенки для кактусов.
-        \item o	Лес: спокойный травяной зеленый для крон деревьев на переднем фоне, изумрудные и голубые оттенки для задника, от светлого до тёмного коричневого цвета для создания объёма стволам деревьев.
+        \item Лес: спокойный травяной зеленый для крон деревьев на переднем фоне, изумрудные и голубые оттенки для задника, от светлого до тёмного коричневого цвета для создания объёма стволам деревьев.
         \item Болото: яркие, немного даже кислотные оттенки зелёного и салатового для деревьев, приглушенно фиолетовый от самого светлого для тёмного для каменистого берега.
     \end{itemize}
+
+    \begin{figure}[h]
+       \centering
+       \begin{subfigure}{0.25\textwidth} 
+           \includegraphics[width=1\textwidth]{pictures/mountain_background.jpg} 
+           \caption{\textit {Горы}}
+           \label{fig:sub1}
+       \end{subfigure}
+       \hfill 
+       \begin{subfigure}{0.25\textwidth}
+           \includegraphics[width=1\textwidth]{pictures/jungle_background.jpg} 
+           \caption{\textit {Джунгли}}
+           \label{fig:sub2}
+       \end{subfigure}
+       \hfill
+       \begin{subfigure}{0.25\textwidth}
+           \includegraphics[width=1\textwidth]{pictures/desert_background.jpg} 
+           \caption{\textit {Пустыня}}
+           \label{fig:sub3}
+       \end{subfigure}
+       \begin{subfigure}{0.25\textwidth}
+           \includegraphics[width=1\textwidth]{pictures/forest_background.jpg} 
+           \caption{\textit {Лес}}
+           \label{fig:sub3}
+       \end{subfigure}
+       \begin{subfigure}{0.25\textwidth}
+           \includegraphics[width=1\textwidth]{pictures/swamp_background.jpg} 
+           \caption{\textit {Болото}}
+           \label{fig:sub3}
+       \end{subfigure}
+       \caption{\textit {Примеры локаций}}
+       \label{fig:main}
+   \end{figure}
+    
     \\Статические элементы окружения такие, как кусты, ветки, осколки скал, водные поверхности и т.п., помогают создать атмосферу уровня.
 \end{enumerate}
-
-\end{document}
 
 \end{document}
